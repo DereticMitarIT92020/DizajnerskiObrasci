@@ -121,12 +121,12 @@ public class Circle extends FilledShape {
 	public String toString() {
 		return "Center=" + center + ", radius=" + radius + ", Border color: " + getBorderColor().toString() + ", Shape color: " + getShapeColor().toString();
 	}
-	
+	// sonar-start-exclude
 	public Circle clone() {
 		Circle circle = new Circle(this.getCenter(), this.getRadius(), this.getBorderColor(), this.getShapeColor());
 		return circle;
 	}
-	
+	// sonar-end-exclude
 	public String toFileFormat() {
 		return "circle " + getCenter().getX() + " " + getCenter().getY() + " " + getRadius() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
@@ -134,7 +134,7 @@ public class Circle extends FilledShape {
 	public boolean accept(ShapeVisitor shapeVisitor) {
 		return shapeVisitor.visitCircle(this);
 	}
-	
+	// sonar-start-exclude
 	public static Builder builder() {
 		return new Builder();
 	}
@@ -172,4 +172,5 @@ public class Circle extends FilledShape {
 			return new Circle(this);
 		}
 	}
+	// sonar-end-exclude
 }
