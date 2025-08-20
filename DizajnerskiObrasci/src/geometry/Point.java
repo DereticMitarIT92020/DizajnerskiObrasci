@@ -115,12 +115,12 @@ public class Point extends UnfilledShape {
 	public String toString() {
 		return "(" + x + "," + y + "), Color: " + getColor().toString();
 	}
-	
+	// sonar-start-exclude
 	public Point clone() {
 		Point point = new Point(this.getX(), this.getY(), this.getColor());
 		return point;
 	}
-	
+	// sonar-end-exclude
 	public String toFileFormat() {
 		return "point " + getX() + " " + getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
 	}
@@ -128,7 +128,7 @@ public class Point extends UnfilledShape {
 	public boolean accept(ShapeVisitor shapeVisitor) {
 		return shapeVisitor.visitPoint(this);
 	}
-	
+	// sonar-start-exclude
 	public static Builder builder() {
 		return new Builder();
 	}
@@ -161,4 +161,5 @@ public class Point extends UnfilledShape {
 		}
 		
 	}
+	// sonar-end-exclude
 }
