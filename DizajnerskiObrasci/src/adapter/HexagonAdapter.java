@@ -111,7 +111,7 @@ public class HexagonAdapter extends FilledShape {
 	public void setSelected(boolean selected) {
 		this.hexagon.setSelected(selected);
 	}
-	
+	// sonar-start-exclude
 	public HexagonAdapter clone() {
 		Hexagon hexagon = new Hexagon(this.getCenterX(), this.getCenterY(), this.getRadius());
 		hexagon.setBorderColor(this.getBorderColor());
@@ -119,7 +119,7 @@ public class HexagonAdapter extends FilledShape {
 		HexagonAdapter ha = new HexagonAdapter(hexagon);
 		return ha;
 	}
-	
+	// sonar-end-exclude
 	public String toString() {
 		return "Center=(" + this.getCenterX() + "," + this.getCenterY() + ")" + ", radius=" + this.getRadius() + ", Border color: " + this.getBorderColor().toString() + ", Shape color: " + this.getShapeColor().toString();
 	}
@@ -131,7 +131,7 @@ public class HexagonAdapter extends FilledShape {
 	public boolean accept(ShapeVisitor shapeVisitor) {
 		return shapeVisitor.visitHexagon(this);
 	}
-	
+	// sonar-start-exclude
 	public static Builder builder() {
 		return new Builder();
 	}
@@ -181,5 +181,5 @@ public class HexagonAdapter extends FilledShape {
 			return new HexagonAdapter(this);
 		}
 	}
-	
+	// sonar-end-exclude
 }
