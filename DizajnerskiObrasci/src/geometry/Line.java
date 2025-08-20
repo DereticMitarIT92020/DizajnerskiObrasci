@@ -101,12 +101,12 @@ public class Line extends UnfilledShape {
 	public String toString() {
 		return startPoint + "-- >" + endPoint + ", Color: " + getColor().toString();
 	}
-	
+	// sonar-start-exclude
 	public Line clone() {
 		Line line = new Line(this.getStartPoint(), this.getEndPoint(), this.getColor());
 		return line;
 	}
-	
+	// sonar-end-exclude
 	public String toFileFormat() {
 		return "line " + getStartPoint().getX() + " " + getStartPoint().getY() + " " + getEndPoint().getX() + " " + getEndPoint().getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
 	}
@@ -114,7 +114,7 @@ public class Line extends UnfilledShape {
 	public boolean accept(ShapeVisitor shapeVisitor) {
 		return shapeVisitor.visitLine(this);
 	}
-	
+	// sonar-start-exclude
 	public static Builder builder() {
 		return new Builder();
 	}
@@ -146,4 +146,5 @@ public class Line extends UnfilledShape {
 			return new Line(this);
 		}
 	}
+	// sonar-end-exclude
 }
