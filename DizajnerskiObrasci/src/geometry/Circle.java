@@ -121,12 +121,12 @@ public class Circle extends FilledShape {
 	public String toString() {
 		return "Center=" + center + ", radius=" + radius + ", Border color: " + getBorderColor().toString() + ", Shape color: " + getShapeColor().toString();
 	}
-	// sonar-start-exclude
+
 	public Circle clone() {
 		Circle circle = new Circle(this.getCenter(), this.getRadius(), this.getBorderColor(), this.getShapeColor());
 		return circle;
 	}
-	// sonar-end-exclude
+	
 	public String toFileFormat() {
 		return "circle " + getCenter().getX() + " " + getCenter().getY() + " " + getRadius() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
