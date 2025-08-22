@@ -192,5 +192,4 @@ public class Rectangle extends FilledShape {
 			return new Rectangle(this);
 		}
 	}
-	
 }
