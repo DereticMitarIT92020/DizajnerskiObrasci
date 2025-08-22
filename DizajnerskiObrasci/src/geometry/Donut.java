@@ -118,12 +118,12 @@ public class Donut extends Circle {
 	public void setInnerRadius(int innerRadius) {
 		this.innerRadius = innerRadius;
 	}
-	// sonar-start-exclude
+	
 	public Donut clone() {
 		Donut donut = new Donut(this.getCenter() ,this.getRadius(), this.getInnerRadius(), this.getBorderColor(), this.getShapeColor());
 		return donut;
 	}
-	// sonar-end-exclude
+	
 	public String toFileFormat() {
 		return "donut " + getCenter().getX() + " " + getCenter().getY() + " " + getRadius() + " " + getInnerRadius()  + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
