@@ -135,12 +135,12 @@ public class Rectangle extends FilledShape {
 	public String toString() {
 		return "Upper left point:" + upperLeftPoint + ", width =" + width + ",height = " + height + ", Border color: " + getBorderColor().toString() + ", Shape color: " + getShapeColor().toString();
 	}
-	// sonar-start-exclude
+	
 	public Rectangle clone() {
 		Rectangle rectangle = new Rectangle(this.getUpperLeftPoint(), this.getWidth(), this.getHeight(), this.getBorderColor(), this.getShapeColor());
 		return rectangle;
 	}
-	// sonar-end-exclude
+	
 	public String toFileFormat() {
 		return "rectangle " + getUpperLeftPoint().getX() + " " + getUpperLeftPoint().getY() + " " + getWidth() + " " + getHeight() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
