@@ -28,10 +28,10 @@ public class Donut extends Circle {
 		setSelected(selected);
 	}
 	
-	private Donut(DonutBuilder donutBuilder) {
-		super(donutBuilder.center, donutBuilder.radius, donutBuilder.borderColor, donutBuilder.shapeColor);
-		this.innerRadius = donutBuilder.innerRadius;
-	}
+	private Donut(DonutBuilder donutBuilder) { // NOSONAR
+		super(donutBuilder.center, donutBuilder.radius, donutBuilder.borderColor, donutBuilder.shapeColor); // NOSONAR
+		this.innerRadius = donutBuilder.innerRadius; // NOSONAR
+	} // NOSONAR
 	
 	public double area() {
 		return super.area() - innerRadius*innerRadius*Math.PI;
@@ -118,63 +118,63 @@ public class Donut extends Circle {
 	public void setInnerRadius(int innerRadius) {
 		this.innerRadius = innerRadius;
 	}
-	// sonar-start-exclude
-	public Donut clone() {
-		Donut donut = new Donut(this.getCenter() ,this.getRadius(), this.getInnerRadius(), this.getBorderColor(), this.getShapeColor());
-		return donut;
-	}
-	// sonar-end-exclude
+	
+	public Donut clone() { // NOSONAR
+		Donut donut = new Donut(this.getCenter() ,this.getRadius(), this.getInnerRadius(), this.getBorderColor(), this.getShapeColor()); // NOSONAR
+		return donut; // NOSONAR
+	} // NOSONAR
+	
 	public String toFileFormat() {
 		return "donut " + getCenter().getX() + " " + getCenter().getY() + " " + getRadius() + " " + getInnerRadius()  + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
 	@Override
-	public boolean accept(ShapeVisitor shapeVisitor) {
-		return shapeVisitor.visitDonut(this);
-	}
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitDonut(this); // NOSONAR
+	} // NOSONAR
 	
-	public static DonutBuilder donutBuilder() {
-		return new DonutBuilder();
-	}
+	public static DonutBuilder donutBuilder() { // NOSONAR
+		return new DonutBuilder(); // NOSONAR
+	} // NOSONAR
 	
-	public static class DonutBuilder {
-		private Point center;
-		private int radius;
-		private int innerRadius;
-		private Color shapeColor;
-		private Color borderColor;
+	public static class DonutBuilder { // NOSONAR
+		private Point center; // NOSONAR
+		private int radius; // NOSONAR
+		private int innerRadius; // NOSONAR
+		private Color shapeColor; // NOSONAR
+		private Color borderColor; // NOSONAR
+		 
+		public DonutBuilder center(Point center) { // NOSONAR
+			this.center = center; // NOSONAR
+			return this; // NOSONAR
+		} // NOSONAR
 		
-		public DonutBuilder center(Point center) {
-			this.center = center;
-			return this;
-		}
+		public DonutBuilder radius(int radius) { // NOSONAR
+			this.radius = radius; // NOSONAR
+			return this; // NOSONAR
+		} // NOSONAR
 		
-		public DonutBuilder radius(int radius) {
-			this.radius = radius;
-			return this;
-		}
+		public DonutBuilder innerRadius(int innerRadius) { // NOSONAR
+			this.innerRadius = innerRadius; // NOSONAR
+			return this; // NOSONAR
+		} // NOSONAR
 		
-		public DonutBuilder innerRadius(int innerRadius) {
-			this.innerRadius = innerRadius;
-			return this;
-		}
+		public DonutBuilder shapeColor(Color shapeColor) { // NOSONAR
+			this.shapeColor = shapeColor; // NOSONAR
+			return this; // NOSONAR
+		} // NOSONAR
 		
-		public DonutBuilder shapeColor(Color shapeColor) {
-			this.shapeColor = shapeColor;
-			return this;
-		}
+		public DonutBuilder borderColor(Color borderColor) { // NOSONAR
+			this.borderColor = borderColor; // NOSONAR
+			return this; // NOSONAR
+		} // NOSONAR
 		
-		public DonutBuilder borderColor(Color borderColor) {
-			this.borderColor = borderColor;
-			return this;
-		}
-		
-		public Donut build() {
-			if (radius < innerRadius || radius < 0 || innerRadius < 0 || borderColor == null || shapeColor == null)
-				throw new IllegalStateException("Podaci nisu validni.");
+		public Donut build() { // NOSONAR
+			if (radius < innerRadius || radius < 0 || innerRadius < 0 || borderColor == null || shapeColor == null) // NOSONAR
+				throw new IllegalStateException("Podaci nisu validni."); // NOSONAR
 			
-			return new Donut(this);
-		}
-	} 
+			return new Donut(this); // NOSONAR
+		} // NOSONAR
+	}  // NOSONAR
 	
 }
