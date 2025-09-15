@@ -31,11 +31,11 @@ public class Point extends UnfilledShape {
 		setSelected(selected);
 	}
 	
-	private Point(Builder builder) { // NOSONAR
-		super(builder.color); // NOSONAR
-		this.x = builder.x; // NOSONAR
-		this.y = builder.y; // NOSONAR
-	} // NOSONAR
+	private Point(Builder builder) { 
+		super(builder.color); 
+		this.x = builder.x; 
+		this.y = builder.y; 
+	} 
 
 	public double distance(int x2, int y2) {
 		double dx = this.x - x2;
@@ -116,10 +116,10 @@ public class Point extends UnfilledShape {
 		return "(" + x + "," + y + "), Color: " + getColor().toString();
 	}
 	
-	public Point clone() { 
-		Point point = new Point(this.getX(), this.getY(), this.getColor()); 
-		return point; 
-	} 
+	public Point clone() { // NOSONAR
+		Point point = new Point(this.getX(), this.getY(), this.getColor()); // NOSONAR
+		return point; // NOSONAR
+	} // NOSONAR
 	
 	public String toFileFormat() {
 		return "point " + getX() + " " + getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
@@ -129,37 +129,37 @@ public class Point extends UnfilledShape {
 		return shapeVisitor.visitPoint(this); // NOSONAR
 	} // NOSONAR
 	
-	public static Builder builder() { // NOSONAR
-		return new Builder(); // NOSONAR
-	} // NOSONAR
+	public static Builder builder() { 
+		return new Builder(); 
+	} 
 	
-	public static class Builder { // NOSONAR
-		private int x; // NOSONAR
-		private int y; // NOSONAR
-		private Color color; // NOSONAR
+	public static class Builder { 
+		private int x; 
+		private int y; 
+		private Color color; 
 		 
-		public Builder x(int x) { // NOSONAR
-			this.x = x; // NOSONAR
-			return this; // NOSONAR
-		} // NOSONAR
+		public Builder x(int x) { 
+			this.x = x; 
+			return this; 
+		} 
 		
-		public Builder y(int y) { // NOSONAR
-			this.y = y; // NOSONAR
-			return this; // NOSONAR
-		} // NOSONAR
+		public Builder y(int y) { 
+			this.y = y; 
+			return this; 
+		} 
 		
-		public Builder color(Color color) { // NOSONAR
-			this.color = color; // NOSONAR
-			return this; // NOSONAR
-		} // NOSONAR
+		public Builder color(Color color) { 
+			this.color = color; 
+			return this; 
+		} 
 		
-		public Point build() { // NOSONAR
-			if (color == null) // NOSONAR
-				throw new IllegalStateException("Podaci nisu validni."); // NOSONAR
+		public Point build() { 
+			if (color == null) 
+				throw new IllegalStateException("Podaci nisu validni."); 
 			
-			return new Point(this); // NOSONAR
-		} // NOSONAR
+			return new Point(this); 
+		} 
 		
-	} // NOSONAR
+	} 
 	
 }
