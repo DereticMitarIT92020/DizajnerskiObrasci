@@ -112,13 +112,13 @@ public class HexagonAdapter extends FilledShape {
 		this.hexagon.setSelected(selected);
 	}
 	
-	public HexagonAdapter clone() { // NOSONAR
-		Hexagon hexagon = new Hexagon(this.getCenterX(), this.getCenterY(), this.getRadius()); // NOSONAR
-		hexagon.setBorderColor(this.getBorderColor()); // NOSONAR
-		hexagon.setAreaColor(this.getShapeColor()); // NOSONAR
-		HexagonAdapter ha = new HexagonAdapter(hexagon); // NOSONAR
-		return ha; // NOSONAR 
-	} // NOSONAR
+	public HexagonAdapter clone() { 
+		Hexagon hexagon = new Hexagon(this.getCenterX(), this.getCenterY(), this.getRadius()); 
+		hexagon.setBorderColor(this.getBorderColor()); 
+		hexagon.setAreaColor(this.getShapeColor()); 
+		HexagonAdapter ha = new HexagonAdapter(hexagon); 
+		return ha;  
+	} 
 	
 	public String toString() {
 		return "Center=(" + this.getCenterX() + "," + this.getCenterY() + ")" + ", radius=" + this.getRadius() + ", Border color: " + this.getBorderColor().toString() + ", Shape color: " + this.getShapeColor().toString();
@@ -128,9 +128,9 @@ public class HexagonAdapter extends FilledShape {
 		return "hexagon " + getCenterX() + " " + getCenterY() + " " + getRadius() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { 
-		return shapeVisitor.visitHexagon(this); 
-	} 
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitHexagon(this); // NOSONAR
+	} // NOSONAR
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
