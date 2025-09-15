@@ -24,11 +24,11 @@ public class Line extends UnfilledShape {
 		setSelected(selected);
 	}
 	
-	private Line(Builder builder) { // NOSONAR
-		super(builder.color); // NOSONAR
-		this.startPoint = builder.startPoint; // NOSONAR
-		this.endPoint = builder.endPoint; // NOSONAR
-	} // NOSONAR
+	private Line(Builder builder) { 
+		super(builder.color); 
+		this.startPoint = builder.startPoint; 
+		this.endPoint = builder.endPoint; 
+	} 
 
 	public double length() {
 		return this.startPoint.distance(this.endPoint.getX(), this.endPoint.getY());
@@ -100,10 +100,10 @@ public class Line extends UnfilledShape {
 		return startPoint + "-- >" + endPoint + ", Color: " + getColor().toString();
 	}
 	
-	public Line clone() { 
-		Line line = new Line(this.getStartPoint(), this.getEndPoint(), this.getColor()); 
-		return line; 
-	} 
+	public Line clone() { // NOSONAR
+		Line line = new Line(this.getStartPoint(), this.getEndPoint(), this.getColor()); // NOSONAR
+		return line; // NOSONAR
+	} // NOSONAR
 	
 	public String toFileFormat() {
 		return "line " + getStartPoint().getX() + " " + getStartPoint().getY() + " " + getEndPoint().getX() + " " + getEndPoint().getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
@@ -113,36 +113,36 @@ public class Line extends UnfilledShape {
 		return shapeVisitor.visitLine(this); // NOSONAR
 	} // NOSONAR
 	
-	public static Builder builder() { // NOSONAR
-		return new Builder(); // NOSONAR
-	} // NOSONAR
+	public static Builder builder() { 
+		return new Builder(); 
+	} 
 	
-	public static class Builder { // NOSONAR
-		private Point startPoint; // NOSONAR
-		private Point endPoint; // NOSONAR
-		private Color color; // NOSONAR
+	public static class Builder { 
+		private Point startPoint; 
+		private Point endPoint; 
+		private Color color; 
 		
-		public Builder startPoint(Point startPoint) { // NOSONAR
-			this.startPoint = startPoint; // NOSONAR
-			return this; // NOSONAR 
-		} // NOSONAR
+		public Builder startPoint(Point startPoint) { 
+			this.startPoint = startPoint; 
+			return this; 
+		} 
 		
-		public Builder endPoint(Point endPoint) { // NOSONAR
-			this.endPoint = endPoint; // NOSONAR
-			return this; // NOSONAR
-		} // NOSONAR
+		public Builder endPoint(Point endPoint) { 
+			this.endPoint = endPoint; 
+			return this; 
+		} 
 		
-		public Builder color(Color color) { // NOSONAR
-			this.color = color; // NOSONAR
-			return this; // NOSONAR
-		} // NOSONAR
+		public Builder color(Color color) { 
+			this.color = color; 
+			return this; 
+		} 
 		
-		public Line build() { // NOSONAR
-			if (color == null) // NOSONAR
-				throw new IllegalStateException("Podaci nisu validni."); // NOSONAR
+		public Line build() { 
+			if (color == null) 
+				throw new IllegalStateException("Podaci nisu validni."); 
 			
-			return new Line(this); // NOSONAR
-		} // NOSONAR
-	} // NOSONAR
+			return new Line(this); 
+		} 
+	} 
 	
 }
