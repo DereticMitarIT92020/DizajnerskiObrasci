@@ -145,9 +145,9 @@ public class Rectangle extends FilledShape {
 		return "rectangle " + getUpperLeftPoint().getX() + " " + getUpperLeftPoint().getY() + " " + getWidth() + " " + getHeight() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
-		return shapeVisitor.visitRectangle(this); // NOSONAR 
-	} // NOSONAR
+	public boolean accept(ShapeVisitor shapeVisitor) { 
+		return shapeVisitor.visitRectangle(this); 
+	} 
 	 
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
