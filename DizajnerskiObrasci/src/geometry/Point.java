@@ -125,9 +125,9 @@ public class Point extends UnfilledShape {
 		return "point " + getX() + " " + getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
-		return shapeVisitor.visitPoint(this); // NOSONAR
-	} // NOSONAR
+	public boolean accept(ShapeVisitor shapeVisitor) { 
+		return shapeVisitor.visitPoint(this); 
+	} 
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
