@@ -116,18 +116,18 @@ public class Point extends UnfilledShape {
 		return "(" + x + "," + y + "), Color: " + getColor().toString();
 	}
 	
-	public Point clone() { // NOSONAR
-		Point point = new Point(this.getX(), this.getY(), this.getColor()); // NOSONAR
-		return point; // NOSONAR
-	} // NOSONAR
+	public Point clone() { 
+		Point point = new Point(this.getX(), this.getY(), this.getColor()); 
+		return point; 
+	} 
 	
 	public String toFileFormat() {
 		return "point " + getX() + " " + getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { 
-		return shapeVisitor.visitPoint(this); 
-	} 
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitPoint(this); // NOSONAR
+	} // NOSONAR
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
