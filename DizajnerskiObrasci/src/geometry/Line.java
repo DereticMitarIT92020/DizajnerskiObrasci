@@ -100,18 +100,18 @@ public class Line extends UnfilledShape {
 		return startPoint + "-- >" + endPoint + ", Color: " + getColor().toString();
 	}
 	
-	public Line clone() { // NOSONAR
-		Line line = new Line(this.getStartPoint(), this.getEndPoint(), this.getColor()); // NOSONAR
-		return line; // NOSONAR
-	} // NOSONAR
+	public Line clone() { 
+		Line line = new Line(this.getStartPoint(), this.getEndPoint(), this.getColor()); 
+		return line; 
+	} 
 	
 	public String toFileFormat() {
 		return "line " + getStartPoint().getX() + " " + getStartPoint().getY() + " " + getEndPoint().getX() + " " + getEndPoint().getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { 
-		return shapeVisitor.visitLine(this); 
-	} 
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitLine(this); // NOSONAR
+	} // NOSONAR
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
