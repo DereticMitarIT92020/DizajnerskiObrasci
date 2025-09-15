@@ -109,9 +109,9 @@ public class Line extends UnfilledShape {
 		return "line " + getStartPoint().getX() + " " + getStartPoint().getY() + " " + getEndPoint().getX() + " " + getEndPoint().getY() + " " + getColor().getRed() + " " + getColor().getGreen() + " " + getColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
-		return shapeVisitor.visitLine(this); // NOSONAR
-	} // NOSONAR
+	public boolean accept(ShapeVisitor shapeVisitor) { 
+		return shapeVisitor.visitLine(this); 
+	} 
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
