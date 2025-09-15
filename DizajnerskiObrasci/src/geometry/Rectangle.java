@@ -136,18 +136,18 @@ public class Rectangle extends FilledShape {
 		return "Upper left point:" + upperLeftPoint + ", width =" + width + ",height = " + height + ", Border color: " + getBorderColor().toString() + ", Shape color: " + getShapeColor().toString();
 	}
 	
-	public Rectangle clone() { // NOSONAR
-		Rectangle rectangle = new Rectangle(this.getUpperLeftPoint(), this.getWidth(), this.getHeight(), this.getBorderColor(), this.getShapeColor()); // NOSONAR
-		return rectangle; // NOSONAR
-	} // NOSONAR
+	public Rectangle clone() { 
+		Rectangle rectangle = new Rectangle(this.getUpperLeftPoint(), this.getWidth(), this.getHeight(), this.getBorderColor(), this.getShapeColor()); 
+		return rectangle; 
+	} 
 	 
 	public String toFileFormat() {
 		return "rectangle " + getUpperLeftPoint().getX() + " " + getUpperLeftPoint().getY() + " " + getWidth() + " " + getHeight() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { 
-		return shapeVisitor.visitRectangle(this); 
-	} 
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitRectangle(this); // NOSONAR
+	} // NOSONAR
 	 
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
