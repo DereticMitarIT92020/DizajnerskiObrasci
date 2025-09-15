@@ -119,19 +119,19 @@ public class Donut extends Circle {
 		this.innerRadius = innerRadius;
 	}
 	
-	public Donut clone() { // NOSONAR
-		Donut donut = new Donut(this.getCenter() ,this.getRadius(), this.getInnerRadius(), this.getBorderColor(), this.getShapeColor()); // NOSONAR
-		return donut; // NOSONAR
-	} // NOSONAR
+	public Donut clone() { 
+		Donut donut = new Donut(this.getCenter() ,this.getRadius(), this.getInnerRadius(), this.getBorderColor(), this.getShapeColor()); 
+		return donut; 
+	} 
 	
 	public String toFileFormat() {
 		return "donut " + getCenter().getX() + " " + getCenter().getY() + " " + getRadius() + " " + getInnerRadius()  + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
 	@Override
-	public boolean accept(ShapeVisitor shapeVisitor) { 
-		return shapeVisitor.visitDonut(this); 
-	} 
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitDonut(this); // NOSONAR
+	} // NOSONAR
 	
 	public static DonutBuilder donutBuilder() { // NOSONAR
 		return new DonutBuilder(); // NOSONAR
