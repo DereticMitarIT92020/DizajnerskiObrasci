@@ -129,9 +129,9 @@ public class Donut extends Circle {
 	}
 	
 	@Override
-	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
-		return shapeVisitor.visitDonut(this); // NOSONAR
-	} // NOSONAR
+	public boolean accept(ShapeVisitor shapeVisitor) { 
+		return shapeVisitor.visitDonut(this); 
+	} 
 	
 	public static DonutBuilder donutBuilder() { // NOSONAR
 		return new DonutBuilder(); // NOSONAR
