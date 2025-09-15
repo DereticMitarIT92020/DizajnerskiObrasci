@@ -128,9 +128,9 @@ public class HexagonAdapter extends FilledShape {
 		return "hexagon " + getCenterX() + " " + getCenterY() + " " + getRadius() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
-		return shapeVisitor.visitHexagon(this); // NOSONAR
-	} // NOSONAR
+	public boolean accept(ShapeVisitor shapeVisitor) { 
+		return shapeVisitor.visitHexagon(this); 
+	} 
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
