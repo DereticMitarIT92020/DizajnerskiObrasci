@@ -122,18 +122,18 @@ public class Circle extends FilledShape {
 		return "Center=" + center + ", radius=" + radius + ", Border color: " + getBorderColor().toString() + ", Shape color: " + getShapeColor().toString();
 	}
     
-	public Circle clone() { // NOSONAR
-		Circle circle = new Circle(this.getCenter(), this.getRadius(), this.getBorderColor(), this.getShapeColor()); // NOSONAR
-		return circle; // NOSONAR
-	} // NOSONAR
+	public Circle clone() { 
+		Circle circle = new Circle(this.getCenter(), this.getRadius(), this.getBorderColor(), this.getShapeColor()); 
+		return circle; 
+	} 
 	 
 	public String toFileFormat() {
 		return "circle " + getCenter().getX() + " " + getCenter().getY() + " " + getRadius() + " " + getBorderColor().getRed() + " " + getBorderColor().getGreen() + " " + getBorderColor().getBlue() + " " + getShapeColor().getRed() + " " + getShapeColor().getGreen() + " " + getShapeColor().getBlue() + " " + isSelected();
 	}
 	
-	public boolean accept(ShapeVisitor shapeVisitor) { 
-		return shapeVisitor.visitCircle(this); 
-	} 
+	public boolean accept(ShapeVisitor shapeVisitor) { // NOSONAR
+		return shapeVisitor.visitCircle(this); // NOSONAR
+	} // NOSONAR
 	
 	public static Builder builder() { // NOSONAR
 		return new Builder(); // NOSONAR
